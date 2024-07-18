@@ -1,11 +1,8 @@
-import { FunctionComponent, render } from 'preact'
-import { html } from 'htm/preact'
-import { example } from '../src/index.js'
+import Debug from '@bicycle-codes/debug'
+import { attributesToString } from '../src/index.js'
+const debug = Debug()
 
-example()
+const el = document.getElementById('example')
+const str = attributesToString(el!)
 
-const Example:FunctionComponent<unknown> = function () {
-    return html`<div>hello</div>`
-}
-
-render(html`<${Example} />`, document.getElementById('root')!)
+debug('attributes as string', str)
