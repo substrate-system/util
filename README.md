@@ -14,7 +14,8 @@ Utility functions
 - [API](#api)
   * [import](#import)
   * [`attributesToString`](#attributestostring)
-  * [pre-built JS](#pre-built-js)
+- [pre-built JS](#pre-built-js)
+  * [copy](#copy)
 
 <!-- tocstop -->
 
