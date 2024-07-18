@@ -12,10 +12,8 @@ Utility functions
 
 - [install](#install)
 - [API](#api)
-  * [ESM](#esm)
-  * [Common JS](#common-js)
-- [use](#use)
-  * [JS](#js)
+  * [import](#import)
+  * [`attributesToString`](#attributestostring)
   * [pre-built JS](#pre-built-js)
 
 <!-- tocstop -->
