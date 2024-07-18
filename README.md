@@ -41,7 +41,7 @@ import { attributesToString } from '@substrate-system/util'
 Take an `HTMLElement`, and transform its attributes into a string format. This is sometimes useful for creating [web components](https://developer.mozilla.org/en-US/docs/Web/API/Web_components).
 
 ```ts
-function attributesToString (el:HTMLElement):string
+function attributesToString (el:HTMLElement):string {
 ```
 
 #### example
