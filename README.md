@@ -20,8 +20,6 @@ Utility functions
 
 ## install
 
-Installation instructions
-
 ```sh
 npm i -S @substrate-system/util
 ```
@@ -54,11 +52,11 @@ console.log(str)
 // => 'type="text" id="example" required'
 ```
 
-### pre-built JS
+## pre-built JS
 This package exposes minified JS files too. Copy them to a location that is
 accessible to your web server, then link to them in HTML.
 
-#### copy
+### copy
 ```sh
 cp ./node_modules/@substrate-system/util/dist/index.min.js ./public/util.min.js
 ```
