@@ -38,17 +38,17 @@ import { attributesToString } from '@substrate-system/util'
 
 ### `attributesToString` 
 
-Take an `HTMLElement`, and transform its attributes into a string format. This is sometimes useful for creating [web components](https://developer.mozilla.org/en-US/docs/Web/API/Web_components).
+Take an array of attributes, and transform them into a string format. This can be useful for creating [web components](https://developer.mozilla.org/en-US/docs/Web/API/Web_components).
 
 ```ts
-function attributesToString (el:HTMLElement):string {
+function attributesToString (attrs:Attr[]):string {
 ```
 
 #### example
 ```ts
 import { attributesToString } from '@substrate-system/util'
 const el = document.getElementById('example')
-const str = attributesToString(el!)
+const str = attributesToString(Array.from(el!.attributes))
 console.log(str)
 // => 'type="text" id="example" required'
 ```
