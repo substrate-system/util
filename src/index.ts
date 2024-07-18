@@ -2,7 +2,7 @@
  * Get attributes from an HTMLElement, and return them as a string
  * like `key=val`.
  * @param {HTMLElement} el The element to get attributes from
- * @returns {string} The attributes as a string of `ky=val`
+ * @returns {string} The attributes as a string of `key=val`
  */
 export function attributesToString (el:HTMLElement):string {
     return Array.from(el.attributes)
