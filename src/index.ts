@@ -11,6 +11,13 @@ export function attributesToString (attrs:Attr[]):string {
         .join(' ')
 }
 
+/**
+ * Return a new object of key value pairs given an array of attributes.
+ *
+ * @param attrs An array of attributes
+ * @returns {Record<string, string|true>} An object of key value pairs, or
+ * key -> true for boolean attributes
+ */
 export function attributesAsObject (attrs:Attr[]):Record<string, string|true> {
     return attrs.reduce((acc, attr) => {
         acc[attr.name] = attr.value || true
