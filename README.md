@@ -47,10 +47,48 @@ function attributesToString (attrs:Attr[]):string {
 #### example
 ```ts
 import { attributesToString } from '@substrate-system/util'
+
 const el = document.getElementById('example')
 const str = attributesToString(Array.from(el!.attributes))
 console.log(str)
 // => 'type="text" id="example" required'
+```
+
+### `attributesAsObject` 
+Return an object of `{ key: value }` from an array of attributes. If an
+attribute is a boolean value, then it will be `{ name: true }`.
+
+```ts
+function attributesAsObject (attrs:Attr[]):Record<string, string|true>
+```
+
+```ts
+import { attributesAsObject } from '@substrate-system/util'
+
+const el = document.querySelector('input')
+const attrs = Array.from(el!.attributes)
+const obj = attributesAsObject(attrs)
+console.log(obj)
+// => {
+//   "type": "text",
+//   "required": true,
+//   "name": "example",
+//   "foo": "bar"
+// }
+```
+
+### `objectToString`
+Take an object, as from `attributesAsObject`, and stringify it in such a way
+that it is appropriate as HTML attributes.
+
+```ts
+function objectToString (obj:Record<string, string|true>):string
+```
+
+```ts
+const str = objectToString(obj)
+console.log(str)
+// => 'type="text" required name="example" foo="bar"'
 ```
 
 ## pre-built JS

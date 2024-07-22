@@ -17,6 +17,7 @@ test('attributesAsObject', t => {
     const el = document.querySelector('input')
     const attrs = Array.from(el!.attributes)
     obj = attributesAsObject(attrs)
+    console.log('object...', JSON.stringify(obj, null, 2))
     t.equal(obj.required, true, 'boolean attributes are set to `true`')
     t.equal(obj.name, 'fooo', 'should have name attribute')
     t.equal(obj.type, 'text', 'should have type attributes')

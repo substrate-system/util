@@ -29,6 +29,23 @@
     "postversion": "git push --follow-tags && npm publish",
     "prepublishOnly": "npm run build"
   },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./*": {
+      "import": [
+        "./dist/*.js",
+        "./dist/*"
+      ],
+      "require": [
+        "./dist/*.cjs",
+        "./dist/*"
+      ]
+    }
+  },
+  "dependencies": {},
   "devDependencies": {
     "@bicycle-codes/tapzero": "^0.10.3",
     "@bicycle-codes/debug": "^0.6.13",
@@ -48,22 +65,6 @@
     "typedoc": "^0.26.4",
     "typescript": "^5.4.5",
     "vite": "^5.3.3"
-  },
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
-    "./*": {
-      "import": [
-        "./dist/*.js",
-        "./dist/*"
-      ],
-      "require": [
-        "./dist/*.cjs",
-        "./dist/*"
-      ]
-    }
   },
   "author": "nichoth <nichoth@nichoth.com> (https://nichoth.com)",
   "license": "MIT",
