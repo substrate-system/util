@@ -33,5 +33,17 @@ export function objectToString (obj:Record<string, string|true>):string {
 
 export default {
     attributesToString,
-    attributesAsObject
+    attributesAsObject,
+    setAttributes
+}
+
+export function setAttributes (el:HTMLElement, attrs:Record<string, string|boolean>) {
+    for (const key in attrs) {
+        const val = attrs[key]
+        if (val === false) {
+            el.removeAttribute(key)
+        } else {
+            el.setAttribute(key, (val === true ? '' : val))
+        }
+    }
 }

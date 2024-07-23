@@ -2,11 +2,12 @@ import { test } from '@bicycle-codes/tapzero'
 import {
     attributesToString,
     attributesAsObject,
-    objectToString
+    objectToString,
+    setAttributes
 } from '../src/index.js'
 
 test('attributesToString', t => {
-    const el = document.querySelector('input')
+    const el = document.querySelector('input')!
     const str = attributesToString(Array.from(el!.attributes))
     t.equal(str, 'type="text" required name="fooo" foo="bar"',
         'should return a string in the right format')
@@ -14,8 +15,8 @@ test('attributesToString', t => {
 
 let obj
 test('attributesAsObject', t => {
-    const el = document.querySelector('input')
-    const attrs = Array.from(el!.attributes)
+    const el = document.querySelector('input')!
+    const attrs = Array.from(el.attributes)
     obj = attributesAsObject(attrs)
     console.log('object...', JSON.stringify(obj, null, 2))
     t.equal(obj.required, true, 'boolean attributes are set to `true`')
@@ -28,4 +29,35 @@ test('object to string', t => {
     const str = objectToString(obj)
     t.equal(str, 'type="text" required name="fooo" foo="bar"',
         'should serialize the attribute object')
+})
+
+test('setAttributes', t => {
+    document.body.innerHTML += `
+        <input id="test" class="test" name="example">
+        </input>
+    `
+
+    const input = document.getElementById('test') as HTMLDivElement
+    t.equal(input.getAttribute('name'), 'example')
+    setAttributes(input, {
+        required: true,
+        name: 'fooo',
+        class: 'testing'
+    })
+
+    console.log('input.attributes',
+        attributesToString(Array.from(input.attributes))
+    )
+
+    t.equal(
+        attributesToString(Array.from(input.attributes)),
+        'id="test" class="testing" name="fooo" required',
+        'should create the expected attributes'
+    )
+
+    setAttributes(input, { required: false })
+    t.equal(input.getAttribute('required'), null,
+        'should remove an attribute')
+    t.equal(input.getAttribute('name'), 'fooo',
+        'should not change other attributes')
 })
