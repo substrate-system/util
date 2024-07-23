@@ -14,6 +14,7 @@ Utility functions for web components.
 - [API](#api)
   * [import](#import)
   * [`attributesToString`](#attributestostring)
+  * [`setAttributes`](#setattributes)
   * [`attributesAsObject`](#attributesasobject)
   * [`objectToString`](#objecttostring)
 - [pre-built JS](#pre-built-js)
