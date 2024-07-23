@@ -56,6 +56,29 @@ console.log(str)
 // => 'type="text" id="example" required'
 ```
 
+### `setAttributes`
+
+Set the given attributes from an object. Will handle boolean attributes like `required`.
+
+```ts
+function setAttributes (el:HTMLElement, attrs:Record<string, string|boolean>)
+```
+
+```ts
+import { attributesToString, setAttributes } from '@substrate-system/util'
+
+const input = document.getElementById('test') as HTMLInputElement
+
+setAttributes(input, {
+    required: true,
+    name: 'fooo',
+    class: 'testing'
+})
+
+console.log(attributesToString(Array.from(input.attributes)))
+// => 'id="test" class="testing" name="fooo" required',
+```
+
 ### `attributesAsObject` 
 Return an object of `{ key: value }` from an array of attributes. If an
 attribute is a boolean value, then it will be `{ name: true }`.
@@ -80,8 +103,7 @@ console.log(obj)
 ```
 
 ### `objectToString`
-Take an object, as from `attributesAsObject`, and stringify it in such a way
-that it is appropriate as HTML attributes.
+Take an object, as from `attributesAsObject`, and stringify it for HTML.
 
 ```ts
 function objectToString (obj:Record<string, string|true>):string

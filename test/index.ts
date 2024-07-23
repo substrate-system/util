@@ -37,7 +37,7 @@ test('setAttributes', t => {
         </input>
     `
 
-    const input = document.getElementById('test') as HTMLDivElement
+    const input = document.getElementById('test') as HTMLInputElement
     t.equal(input.getAttribute('name'), 'example')
     setAttributes(input, {
         required: true,
