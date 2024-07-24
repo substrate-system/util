@@ -104,7 +104,7 @@ console.log(obj)
 ```
 
 ### `objectToString`
-Take an object, as from `attributesAsObject`, and stringify it for HTML.
+Take an object, as from `attributesAsObject`, and stringify it for use in HTML.
 
 ```ts
 function objectToString (obj:Record<string, string|true>):string
