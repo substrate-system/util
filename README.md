@@ -71,6 +71,7 @@ import { attributesToString, setAttributes } from '@substrate-system/util'
 const input = document.getElementById('test') as HTMLInputElement
 
 setAttributes(input, {
+    id: 'test',
     required: true,
     name: 'fooo',
     class: 'testing'
