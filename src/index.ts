@@ -12,6 +12,31 @@ export function attributesToString (attrs:Attr[]):string {
 }
 
 /**
+ * Serialize a form and return a plain object.
+ * If a form control with the same name appears more than once, the
+ * property will be converted to an array.
+ */
+export function formToObject (form:HTMLFormElement):Record<string, unknown> {
+    const formData = new FormData(form)
+    const object:Record<string, unknown> = {}
+
+    formData.forEach((value, key) => {
+        if (Reflect.has(object, key)) {
+            const entry = object[key]
+            if (Array.isArray(entry)) {
+                entry.push(value)
+            } else {
+                object[key] = [object[key], value]
+            }
+        } else {
+            object[key] = value
+        }
+    })
+
+    return object
+}
+
+/**
  * Return a new object of key value pairs given an array of attributes.
  *
  * @param attrs An array of attributes

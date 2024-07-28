@@ -3,8 +3,23 @@ import {
     attributesToString,
     attributesAsObject,
     objectToString,
-    setAttributes
+    setAttributes,
+    formToObject
 } from '../src/index.js'
+
+test('formToObject', t => {
+    document.body.innerHTML += `<form>
+        <input name="hello" value="world" />
+        <input name="testnull" />
+    </form>`
+
+    const form = document.querySelector('form')!
+    const obj = formToObject(form)
+    t.deepEqual(obj, {
+        hello: 'world',
+        testnull: ''
+    }, 'should return the expected object')
+})
 
 test('attributesToString', t => {
     const el = document.querySelector('input')!
