@@ -16,7 +16,7 @@ export function attributesToString (attrs:Attr[]):string {
  * If a form control with the same name appears more than once, the
  * property will be converted to an array.
  */
-export function formToObject (form:HTMLFormElement):Record<string, unknown> {
+export function parseForm (form:HTMLFormElement):Record<string, unknown> {
     const formData = new FormData(form)
     const object:Record<string, unknown> = {}
 

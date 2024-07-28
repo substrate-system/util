@@ -4,7 +4,7 @@ import {
     attributesAsObject,
     objectToString,
     setAttributes,
-    formToObject
+    parseForm
 } from '../src/index.js'
 
 test('formToObject', t => {
@@ -14,7 +14,7 @@ test('formToObject', t => {
     </form>`
 
     const form = document.querySelector('form')!
-    const obj = formToObject(form)
+    const obj = parseForm(form)
     t.deepEqual(obj, {
         hello: 'world',
         testnull: ''

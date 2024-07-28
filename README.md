@@ -39,6 +39,14 @@ import util from '@substrate-system/util'
 import { attributesToString } from '@substrate-system/util'
 ```
 
+### `parseForm`
+
+Serialize a form and return a plain object. If a form control with the same name appears more than once, the property will be converted to an array.
+
+```ts
+function parseForm (form:HTMLFormElement):Record<string, unknown>
+```
+
 ### `attributesToString` 
 
 Take an array of attributes, and transform them into a string format. This can be useful for creating [web components](https://developer.mozilla.org/en-US/docs/Web/API/Web_components).
