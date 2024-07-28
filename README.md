@@ -13,6 +13,7 @@ Utility functions for web components.
 - [install](#install)
 - [API](#api)
   * [import](#import)
+  * [`parseForm`](#parseform)
   * [`attributesToString`](#attributestostring)
   * [`setAttributes`](#setattributes)
   * [`attributesAsObject`](#attributesasobject)
