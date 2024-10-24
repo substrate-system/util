@@ -122,6 +122,9 @@ function objectToString (obj:Record<string, string|true>):string
 ```
 
 ```ts
+import { objectToString } from '@substrate-system/util'
+
+const obj =  { "type": "text", "required": true, "name": "example", "foo": "bar" }
 const str = objectToString(obj)
 console.log(str)
 // => 'type="text" required name="example" foo="bar"'
