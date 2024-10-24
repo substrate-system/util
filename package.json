@@ -1,6 +1,6 @@
 {
   "name": "@substrate-system/util",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Utility functions",
   "directories": {
     "example": "example",
