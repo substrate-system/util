@@ -18,6 +18,7 @@ Utility functions for web components.
   * [`setAttributes`](#setattributes)
   * [`attributesAsObject`](#attributesasobject)
   * [`objectToString`](#objecttostring)
+  * [`CONSTANTS`](#constants)
 - [pre-built JS](#pre-built-js)
   * [copy](#copy)
 
