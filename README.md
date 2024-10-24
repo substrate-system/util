@@ -126,6 +126,22 @@ console.log(str)
 // => 'type="text" required name="example" foo="bar"'
 ```
 
+### `CONSTANTS`
+Expose unicode characters.
+
+```ts
+import * as CONSTANTS from '@substrate-system/util/CONSTANTS'
+```
+
+```ts
+// CONSTANTS.ts
+export const EM_DASH = '\u2014'
+export const EN_DASH = '\u2013'
+export const NBSP = '\u00A0'
+```
+
+-----------------------------------------------------------------------
+
 ## pre-built JS
 This package exposes minified JS files too. Copy them to a location that is
 accessible to your web server, then link to them in HTML.
