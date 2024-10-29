@@ -6,6 +6,7 @@ import {
     setAttributes,
     parseForm
 } from '../src/index.js'
+import './email.js'
 
 test('formToObject', t => {
     document.body.innerHTML += `<form>

@@ -41,6 +41,22 @@ import util from '@substrate-system/util'
 import { attributesToString } from '@substrate-system/util'
 ```
 
+### `isEmailValid(maybeEmail:string)`
+Validate an email address.
+
+```ts
+function isEmailValid (maybeEmail:string):boolean
+```
+
+#### example
+
+```js
+import { isEmailValid } from '@substrate-system/util/email'
+
+isEmailValid('aaa@bbb.com')
+// => true
+```
+
 ### `parseForm`
 
 Serialize a form and return a plain object. If a form control with the same name appears more than once, the property will be converted to an array.
