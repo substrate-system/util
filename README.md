@@ -13,6 +13,7 @@ Utility functions for web components.
 - [install](#install)
 - [API](#api)
   * [import](#import)
+  * [`isEmailValid(maybeEmail:string)`](#isemailvalidmaybeemailstring)
   * [`parseForm`](#parseform)
   * [`attributesToString`](#attributestostring)
   * [`setAttributes`](#setattributes)
