@@ -13,6 +13,9 @@ Utility functions for web components.
 - [install](#install)
 - [API](#api)
   * [import](#import)
+  * [`humanFilesize`](#humanfilesize)
+  * [Queue](#queue)
+  * [`sleep(ms?:number):Promise`](#sleepmsnumberpromise)
   * [`isEmailValid(maybeEmail:string)`](#isemailvalidmaybeemailstring)
   * [`parseForm`](#parseform)
   * [`attributesToString`](#attributestostring)
@@ -20,8 +23,6 @@ Utility functions for web components.
   * [`attributesAsObject`](#attributesasobject)
   * [`objectToString`](#objecttostring)
   * [`CONSTANTS`](#constants)
-- [pre-built JS](#pre-built-js)
-  * [copy](#copy)
 
 <!-- tocstop -->
 
