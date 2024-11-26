@@ -1,3 +1,5 @@
+export * from './queue'
+
 /**
  * Get attributes from an HTMLElement, and return them as a string
  * like `key=val`.
@@ -9,6 +11,22 @@ export function attributesToString (attrs:Attr[]):string {
         '' :
         `="${attr.value}"`))
         .join(' ')
+}
+
+/**
+ * Wait for `ms` milliseconds.
+ *
+ * @param {number} [ms]
+ * @return {Promise<void>}
+ */
+export function sleep (ms?:number):Promise<void> {
+    return new Promise(resolve => {
+        if (!ms) {
+            setTimeout(resolve, 0)
+        } else {
+            setTimeout(resolve, ms)
+        }
+    })
 }
 
 /**
