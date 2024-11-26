@@ -7,6 +7,7 @@ import {
     parseForm
 } from '../src/index.js'
 import './email.js'
+import './filesize.js'
 
 test('formToObject', t => {
     document.body.innerHTML += `<form>

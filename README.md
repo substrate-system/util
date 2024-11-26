@@ -42,6 +42,133 @@ import util from '@substrate-system/util'
 import { attributesToString } from '@substrate-system/util'
 ```
 
+-----------------------------------------------------------------
+
+### `humanFilesize`
+Take the number of bytes, return a string abbreviated to common sizes (megabyte, kilobyte, etc).
+
+#### Example
+```ts
+import { humanFilesize } from '@bicycle-codes/util/filesize'
+
+const size = humanFilesize(10_000)
+console.log(size)
+// => 9.8 KiB
+```
+
+#### API
+
+```ts
+function humanFilesize (
+    bytes:number,
+    si:boolean = false,
+    dp:number = 1
+):string
+```
+
+##### arguments
+
+* `bytes` the byte count
+* `si` -- use [SI](https://en.wikipedia.org/wiki/International_System_of_Units), instead of [EIC](https://en.wikipedia.org/wiki/Binary_prefix) units (default `false`)
+* `dp` is the number of decimal places to show.
+
+-------------------------------------------------------------------
+
+### Queue
+```js
+import { Queue } from '@substrate-system/util/queue'
+```
+
+Create a queue of promises. Promises will execute 1 at a time, in sequential order.
+
+```ts
+class Queue<T> {
+    add (createP:()=>Promise<T>):Promise<T|void>
+}
+```
+
+#### `queue.add`
+Take a function that returns a promise. Return a promise that will resolve when
+the created promise resolves.
+
+```ts
+add (createP:()=>Promise<T>):Promise<T|void>
+```
+
+> [!NOTE]  
+> This will resolve promises in the order they were added to the queue.
+
+#### example
+
+```ts
+import { test } from '@substrate-system/tapzero'
+import { Queue } from '@substrate-system/util'
+
+test('queue of 3 items', t => {
+    const q = new Queue<string>()
+
+    // [p1, p2, p3]
+    const returned = [false, false, false]
+
+    const p1 = q.add(() => {
+        return new Promise<string>(resolve => {
+            setTimeout(() => resolve('p1'), 300)
+        })
+    })
+
+    const p2 = q.add(() => {
+        return new Promise<string>(resolve => {
+            setTimeout(() => resolve('p2'), 200)
+        })
+    })
+
+    const p3 = q.add(() => {
+        return new Promise<string>(resolve => {
+            setTimeout(() => resolve('p3'), 100)
+        })
+    })
+
+    // p1 takes the longest
+    p1.then((value) => {
+        t.equal(value, 'p1', '"p1" string is ok')
+        returned[0] = true
+        t.ok(!returned[2], 'p2 should not have returned yet')
+        t.ok(!returned[1], 'p1 should not have returned yet')
+    })
+
+    p2.then(value => {
+        t.equal(value, 'p2', 'should get string "p2"')
+        returned[1] = true
+        t.ok(returned[0], 'should have p1 b/c it was added first')
+        t.ok(!returned[2], 'should not have 3 yet b/c it was addded last')
+    })
+
+    // p3 is the fastest
+    p3.then(value => {
+        t.equal(value, 'p3', 'should get string "p3"')
+        returned[2] = true
+        t.ok(returned[0], 'should have p1 because it was added first')
+        t.ok(returned[1], 'should have p2 because it was added next')
+    })
+
+    // return 3 so the test knows when to end,
+    // because they resolve in order,
+    // even though the ms are backwards
+    return p3
+})
+```
+
+------------------------------------------------------------------
+
+### `sleep(ms?:number):Promise<void>`
+Import sleep from here to reduce duplication.
+
+```js
+import { sleep } from '@substrate-system/util'
+
+await sleep(500)  // 1/2 second
+```
+
 ### `isEmailValid(maybeEmail:string)`
 Validate an email address.
 
@@ -58,8 +185,9 @@ isEmailValid('aaa@bbb.com')
 // => true
 ```
 
-### `parseForm`
+------------------------------------------------------------------
 
+### `parseForm`
 Serialize a form and return a plain object. If a form control with the same name appears more than once, the property will be converted to an array.
 
 ```ts
@@ -67,7 +195,6 @@ function parseForm (form:HTMLFormElement):Record<string, unknown>
 ```
 
 ### `attributesToString` 
-
 Take an array of attributes, and transform them into a string format. This can be useful for creating [web components](https://developer.mozilla.org/en-US/docs/Web/API/Web_components).
 
 ```ts
@@ -84,8 +211,9 @@ console.log(str)
 // => 'type="text" id="example" required'
 ```
 
-### `setAttributes`
+------------------------------------------------------------------
 
+### `setAttributes`
 Set the given attributes from an object. Will handle boolean attributes like `required`.
 
 ```ts
@@ -107,6 +235,8 @@ setAttributes(input, {
 console.log(attributesToString(Array.from(input.attributes)))
 // => 'id="test" class="testing" name="fooo" required',
 ```
+
+------------------------------------------------------------------
 
 ### `attributesAsObject` 
 Return an object of `{ key: value }` from an array of attributes. If an
@@ -130,6 +260,8 @@ console.log(obj)
 //   "foo": "bar"
 // }
 ```
+
+------------------------------------------------------------------
 
 ### `objectToString`
 Take an object, as from `attributesAsObject`, and stringify it for use in HTML.
@@ -159,20 +291,4 @@ import * as CONSTANTS from '@substrate-system/util/CONSTANTS'
 export const EM_DASH = '\u2014'
 export const EN_DASH = '\u2013'
 export const NBSP = '\u00A0'
-```
-
------------------------------------------------------------------------
-
-## pre-built JS
-This package exposes minified JS files too. Copy them to a location that is
-accessible to your web server, then link to them in HTML.
-
-### copy
-```sh
-cp ./node_modules/@substrate-system/util/dist/index.min.js ./public/util.min.js
-```
-
-#### HTML
-```html
-<script type="module" src="./util.min.js"></script>
 ```
