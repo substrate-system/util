@@ -1,6 +1,6 @@
 {
   "name": "@substrate-system/util",
-  "version": "0.1.12",
+  "version": "0.1.11",
   "description": "Utility functions",
   "directories": {
     "example": "example",
@@ -46,14 +46,8 @@
     }
   },
   "devDependencies": {
-<<<<<<< HEAD
-    "@bicycle-codes/tapzero": "^0.10.3",
-    "@bicycle-codes/debug": "^0.7.2",
-=======
-    "@bicycle-codes/debug": "^0.6.13",
-    "@bicycle-codes/tapzero": "^0.10.3",
->>>>>>> 71a59cc (add some things)
     "@preact/preset-vite": "^2.9.0",
+    "@substrate-system/debug": "^0.7.2",
     "@substrate-system/tapzero": "^0.10.5",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",

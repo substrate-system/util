@@ -1,4 +1,4 @@
-import Debug from '@bicycle-codes/debug'
+import Debug from '@substrate-system/debug'
 import { attributesToString } from '../src/index.js'
 const debug = Debug()
 
