@@ -50,7 +50,7 @@ Take the number of bytes, return a string abbreviated to common sizes (megabyte,
 
 #### Example
 ```ts
-import { humanFilesize } from '@bicycle-codes/util/filesize'
+import { humanFilesize } from '@substrate-system/util/filesize'
 
 const size = humanFilesize(10_000)
 console.log(size)

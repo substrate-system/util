@@ -1,4 +1,4 @@
-import { test } from '@bicycle-codes/tapzero'
+import { test } from '@substrate-system/tapzero'
 import { isEmailValid } from '../src/email.js'
 
 test('isEmailValid', async t => {
