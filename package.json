@@ -55,12 +55,12 @@
     "eslint": "^8.57.0",
     "eslint-config-standard": "^17.1.0",
     "markdown-toc": "^1.2.0",
-    "postcss-nesting": "^13.0.0",
+    "postcss-nesting": "^13.0.1",
     "tap-spec": "^5.0.0",
     "tape-run": "^11.0.0",
-    "typedoc": "^0.26.4",
-    "typescript": "^5.4.5",
-    "vite": "^5.3.3"
+    "typedoc": "^0.27.0",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.0"
   },
   "author": "nichoth <nichoth@nichoth.com> (https://nichoth.com)",
   "license": "MIT",
