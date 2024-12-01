@@ -16,7 +16,7 @@ Utility functions for web components.
   * [import](#import)
   * [`humanFilesize`](#humanfilesize)
   * [Queue](#queue)
-  * [`sleep(ms?:number):Promise`](#sleepmsnumberpromise)
+  * [`sleep`](#sleep)
   * [`isEmailValid(maybeEmail:string)`](#isemailvalidmaybeemailstring)
   * [`parseForm`](#parseform)
   * [`attributesToString`](#attributestostring)
