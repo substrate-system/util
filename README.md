@@ -14,6 +14,7 @@ Utility functions for web components.
 - [install](#install)
 - [API](#api)
   * [import](#import)
+  * [`self`](#self)
   * [`humanFilesize`](#humanfilesize)
   * [Queue](#queue)
   * [`sleep`](#sleep)
