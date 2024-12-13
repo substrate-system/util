@@ -46,6 +46,13 @@ import { attributesToString } from '@substrate-system/util'
 
 -----------------------------------------------------------------
 
+### `self`
+The `self` object for Node.
+
+```js
+imoprt { self } from '@substrate-system/util/node'
+```
+
 ### `humanFilesize`
 Take the number of bytes, return a string abbreviated to common sizes (megabyte, kilobyte, etc).
 

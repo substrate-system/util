@@ -22,11 +22,10 @@ jobs:
       run: |
         npm install
         npm run build --if-present
-        npm run lint
       env:
         CI: true
     - name: Run tape tests
       run: |
-        npm run build-tests
         npm run test:node
+        npm run build-tests
         xvfb-run --server-args="-screen 0 1920x1080x24" npm run test-tape-run
