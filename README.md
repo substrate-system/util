@@ -48,7 +48,7 @@ import { attributesToString } from '@substrate-system/util'
 -----------------------------------------------------------------
 
 ### `self`
-The `self` object for Node.
+The [`self`](https://developer.mozilla.org/en-US/docs/Web/API/Window/self) object for Node.
 
 ```js
 import { self } from '@substrate-system/util/node'
