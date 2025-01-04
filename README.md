@@ -51,7 +51,7 @@ import { attributesToString } from '@substrate-system/util'
 The `self` object for Node.
 
 ```js
-imoprt { self } from '@substrate-system/util/node'
+import { self } from '@substrate-system/util/node'
 ```
 
 ### `humanFilesize`
