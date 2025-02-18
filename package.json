@@ -11,6 +11,30 @@
   "files": [
     "./dist/*"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./constants": {
+      "import": "./dist/CONSTANTS.js",
+      "require": "./dist/CONSTANTS.cjs"
+    },
+    "./node/*": {
+      "import": "./dist/node/*.js",
+      "require": "./dist/node/*.cjs"
+    },
+    "./*": {
+      "import": [
+        "./dist/*.js",
+        "./dist/*"
+      ],
+      "require": [
+        "./dist/*.cjs",
+        "./dist/*"
+      ]
+    }
+  },
   "scripts": {
     "lint": "eslint \"./**/*.{ts,js}\"",
     "build-tests": "esbuild test/index.ts --target=es2020 --bundle --keep-names > test/test-bundle.js",
@@ -30,26 +54,7 @@
     "postversion": "git push --follow-tags && npm publish",
     "prepublishOnly": "npm run build"
   },
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
-    "./node/*": {
-      "import": "./dist/node/*.js",
-      "require": "./dist/node/*.cjs"
-    },
-    "./*": {
-      "import": [
-        "./dist/*.js",
-        "./dist/*"
-      ],
-      "require": [
-        "./dist/*.cjs",
-        "./dist/*"
-      ]
-    }
-  },
+  "dependencies": {},
   "devDependencies": {
     "@substrate-system/debug": "^0.7.2",
     "@substrate-system/tapzero": "^0.10.5",
