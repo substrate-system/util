@@ -14,6 +14,7 @@ Utility functions for the front end.
 - [install](#install)
 - [API](#api)
   * [import](#import)
+  * [`classes`](#classes)
   * [`self`](#self)
   * [`humanFilesize`](#humanfilesize)
   * [Queue](#queue)
