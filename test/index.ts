@@ -6,8 +6,16 @@ import {
     setAttributes,
     parseForm
 } from '../src/index.js'
+import { classes } from '../src/classes.js'
 import './email.js'
 import './filesize.js'
+
+test('classes', t => {
+    const className = classes('abc 123', '456')
+    t.equal(className, 'abc 123 456', 'should concattenate the css classes')
+    t.equal(classes('hello', classes('123', '', 'ok')), 'hello 123 ok',
+        'should filter falsy values')
+})
 
 test('formToObject', t => {
     document.body.innerHTML += `<form>

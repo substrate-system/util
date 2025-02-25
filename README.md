@@ -7,7 +7,7 @@
 [![install size](https://flat.badgen.net/packagephobia/install/@substrate-system/util?cache-control=no-cache)](https://packagephobia.com/result?p=@substrate-system/util)
 [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
-Utility functions for web components.
+Utility functions for the front end.
 
 <!-- toc -->
 
@@ -47,15 +47,26 @@ import { attributesToString } from '@substrate-system/util'
 
 -----------------------------------------------------------------
 
+### `classes`
+Create a new class name string by concattenating the given input.
+
+```js
+import { classes } from '@substrate-system/util/classes'
+const className = classes('hello', '123', '100')
+// => 'hello 123 100'
+```
+
 ### `self`
-The [`self`](https://developer.mozilla.org/en-US/docs/Web/API/Window/self) object for Node.
+The [`self`](https://developer.mozilla.org/en-US/docs/Web/API/Window/self)
+object for Node.
 
 ```js
 import { self } from '@substrate-system/util/node'
 ```
 
 ### `humanFilesize`
-Take the number of bytes, return a string abbreviated to common sizes (megabyte, kilobyte, etc).
+Take the number of bytes, return a string abbreviated to common sizes
+(megabyte, kilobyte, etc).
 
 #### Example
 ```ts
@@ -79,7 +90,9 @@ function humanFilesize (
 ##### arguments
 
 * `bytes` the byte count
-* `si` -- use [SI](https://en.wikipedia.org/wiki/International_System_of_Units), instead of [EIC](https://en.wikipedia.org/wiki/Binary_prefix) units (default `false`)
+* `si` -- use [SI](https://en.wikipedia.org/wiki/International_System_of_Units),
+  instead of [EIC](https://en.wikipedia.org/wiki/Binary_prefix) units
+  (default `false`)
 * `dp` is the number of decimal places to show.
 
 -------------------------------------------------------------------
@@ -89,7 +102,8 @@ function humanFilesize (
 import { Queue } from '@substrate-system/util/queue'
 ```
 
-Create a queue of promises. Promises will execute 1 at a time, in sequential order.
+Create a queue of promises. Promises will execute 1 at a time, in
+sequential order.
 
 ```ts
 class Queue<T> {
@@ -202,14 +216,17 @@ isEmailValid('aaa@bbb.com')
 ------------------------------------------------------------------
 
 ### `parseForm`
-Serialize a form and return a plain object. If a form control with the same name appears more than once, the property will be converted to an array.
+Serialize a form and return a plain object. If a form control with the same name
+appears more than once, the property will be converted to an array.
 
 ```ts
 function parseForm (form:HTMLFormElement):Record<string, unknown>
 ```
 
 ### `attributesToString` 
-Take an array of attributes, and transform them into a string format. This can be useful for creating [web components](https://developer.mozilla.org/en-US/docs/Web/API/Web_components).
+Take an array of attributes, and transform them into a string format. This can
+be useful for creating
+[web components](https://developer.mozilla.org/en-US/docs/Web/API/Web_components).
 
 ```ts
 function attributesToString (attrs:Attr[]):string {
@@ -228,7 +245,8 @@ console.log(str)
 ------------------------------------------------------------------
 
 ### `setAttributes`
-Set the given attributes from an object. Will handle boolean attributes like `required`.
+Set the given attributes from an object. Will handle boolean attributes
+like `required`.
 
 ```ts
 function setAttributes (el:HTMLElement, attrs:Record<string, string|boolean>)
@@ -287,7 +305,12 @@ function objectToString (obj:Record<string, string|true>):string
 ```ts
 import { objectToString } from '@substrate-system/util'
 
-const obj =  { "type": "text", "required": true, "name": "example", "foo": "bar" }
+const obj =  {
+    type: "text",
+    required: true,
+    name: "example",
+    foo: "bar"
+}
 const str = objectToString(obj)
 console.log(str)
 // => 'type="text" required name="example" foo="bar"'

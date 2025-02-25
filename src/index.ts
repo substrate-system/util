@@ -1,4 +1,5 @@
 export * from './queue'
+export * from './classes'
 
 /**
  * Get attributes from an HTMLElement, and return them as a string
