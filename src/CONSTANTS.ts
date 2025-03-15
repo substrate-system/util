@@ -6,3 +6,4 @@ export const TERABYTE = (2 ** 40)
 export const GIGABYTE = (2 ** 30)
 export const MEGABYTE = (2 ** 20)
 export const KILOBYTE = (2 ** 10)
+export const ELLIPSIS = '\u2026'
