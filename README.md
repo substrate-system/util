@@ -12,9 +12,10 @@ Utility functions for the front end.
 <!-- toc -->
 
 - [install](#install)
+- [import](#import)
 - [API](#api)
-  * [import](#import)
-  * [`classes`](#classes)
+  * [Constants](#constants)
+  * [HTML classes](#html-classes)
   * [`self`](#self)
   * [`humanFilesize`](#humanfilesize)
   * [Queue](#queue)
