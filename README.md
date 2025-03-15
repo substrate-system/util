@@ -35,9 +35,7 @@ Utility functions for the front end.
 npm i -S @substrate-system/util
 ```
 
-## API
-
-### import
+## import
 
 ```js
 import util from '@substrate-system/util'
@@ -46,9 +44,31 @@ import util from '@substrate-system/util'
 import { attributesToString } from '@substrate-system/util'
 ```
 
------------------------------------------------------------------
+## API
 
-### `classes`
+### Constants
+
+Various special characters.
+
+```js
+const EM_DASH = '\u2014'
+const EN_DASH = '\u2013'
+const NBSP = '\u00A0'
+const PETABYTE = (2 ** 50)
+const TERABYTE = (2 ** 40)
+const GIGABYTE = (2 ** 30)
+const MEGABYTE = (2 ** 20)
+const KILOBYTE = (2 ** 10)
+const ELLIPSIS = '\u2026'
+```
+
+```js
+import { ELLIPSIS } from '@substrate-system/util/constants'
+
+element.textContent = `${ELLIPSIS} something dramatic ${ELLIPSIS}`
+```
+
+### HTML classes
 Create a new class name string by concattenating the given input.
 
 ```js
