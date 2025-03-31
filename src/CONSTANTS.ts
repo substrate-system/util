@@ -7,3 +7,4 @@ export const GIGABYTE = (2 ** 30)
 export const MEGABYTE = (2 ** 20)
 export const KILOBYTE = (2 ** 10)
 export const ELLIPSIS = '\u2026'
+export const BULLET = '\u2022'
