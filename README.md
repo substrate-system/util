@@ -61,6 +61,7 @@ const GIGABYTE = (2 ** 30)
 const MEGABYTE = (2 ** 20)
 const KILOBYTE = (2 ** 10)
 const ELLIPSIS = '\u2026'
+const BULLET = '\u2022'
 ```
 
 ```js
@@ -238,7 +239,7 @@ isEmailValid('aaa@bbb.com')
 ------------------------------------------------------------------
 
 ### `parseForm`
-Serialize a form and return a plain object. If a form control with the same name
+Parse a form and return a plain object. If a form control with the same name
 appears more than once, the property will be converted to an array.
 
 ```ts
