@@ -1,0 +1,11 @@
+body {
+    /* for the scroll lock test */
+    min-height: 200vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.controls {
+    margin-top: 1rem;
+}

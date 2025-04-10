@@ -5,7 +5,8 @@
 [![semantic versioning](https://img.shields.io/badge/semver-2.0.0-blue?logo=semver&style=flat-square)](https://semver.org/)
 [![dependencies](https://img.shields.io/badge/dependencies-zero-brightgreen.svg?style=flat-square)](package.json)
 [![install size](https://flat.badgen.net/packagephobia/install/@substrate-system/util?cache-control=no-cache)](https://packagephobia.com/result?p=@substrate-system/util)
-[![license](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
+[![license](https://img.shields.io/badge/license-Polyform_Small_Business-249fbc?style=flat-square)](LICENSE)
+
 
 Utility functions for the front end.
 
@@ -46,6 +47,31 @@ import { attributesToString } from '@substrate-system/util'
 ```
 
 ## API
+
+### lock & unlock scrolling
+
+Prevents body scrolling, useful for things like "dialog" windows.
+Keeps track of which elements requested a lock so multiple levels of
+locking are possible without premature unlocking.
+
+Originally seen in [the shoelace library](https://github.com/shoelace-style/shoelace/blob/fb59fda70ed737c92611051b49bc7e3a5fed5dc5/src/internal/scroll.ts#L58).
+
+
+
+#### `lockBodyScrolling`
+Stop scrolling.
+
+```ts
+function lockBodyScrolling (lockingEl:HTMLElement):void
+```
+
+#### `unlockBodyScrolling`
+Resume scrolling.
+
+```ts
+function unlockBodyScrolling (lockingEl:HTMLElement):void
+```
+
 
 ### Constants
 
