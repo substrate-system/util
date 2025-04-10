@@ -57,6 +57,17 @@ locking are possible without premature unlocking.
 
 Originally seen in [the shoelace library](https://github.com/shoelace-style/shoelace/blob/fb59fda70ed737c92611051b49bc7e3a5fed5dc5/src/internal/scroll.ts#L58).
 
+#### example
+
+```js
+import { lockBodyScrolling, unlockBodyScrolling } from '@substrate-system/util'
+
+// stop scroll
+lockBodyScrolling(document.body)
+
+// ...sometime in the future...
+unlockBodyScrolling(document.body)
+```
 
 
 #### `lockBodyScrolling`
