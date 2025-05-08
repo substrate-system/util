@@ -56,7 +56,7 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@substrate-system/debug": "^0.7.22",
+    "@substrate-system/debug": "^0.9.0",
     "@substrate-system/tapzero": "^0.10.13",
     "@types/node": "^22.10.2",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
