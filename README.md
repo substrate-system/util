@@ -15,6 +15,7 @@ Utility functions for the front end.
 - [install](#install)
 - [import](#import)
 - [API](#api)
+  * [toString](#tostring)
   * [lock & unlock scrolling](#lock--unlock-scrolling)
   * [Constants](#constants)
   * [HTML classes](#html-classes)
