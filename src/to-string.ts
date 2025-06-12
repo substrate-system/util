@@ -6,10 +6,12 @@
  * @returns {string} A string suitable for use as HTML attributes.
  */
 export function attributes (
-    attrs:Record<string, string|number|boolean|(string|number)[]>
+    attrs:Record<string, undefined|null|string|number|boolean|(string|number)[]>
 ):string {
     return Object.keys(attrs).reduce((acc, k) => {
         const value = attrs[k]
+        if (!value) return acc
+
         if (typeof value === 'boolean') {
             if (value) return (acc + ` ${k}`).trim()
             return acc

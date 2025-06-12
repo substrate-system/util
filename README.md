@@ -71,6 +71,22 @@ const string = attributes({ hello: 'abc', ok: '123' })
 // => 'hello="abc" ok="123"'
 ```
 
+```js
+import { attributes } from '@substrate-system/util/to-string.js'
+
+test('Create attributes with null and undefined', t => {
+    const str = attributes({
+        hello: 'abc',
+        abc: undefined,
+        def: null,
+        ghi: false,
+        jkl: ''
+    })
+
+    t.equal(str, 'hello="abc"')
+})
+```
+
 ### lock & unlock scrolling
 
 Prevents body scrolling, useful for things like "dialog" windows.
