@@ -1,5 +1,7 @@
 /**
  * Original seen in [shoelace](https://github.com/shoelace-style/shoelace/blob/next/src/internal/scroll.ts)
+ *
+ * Useful for modal windows.
  */
 
 const locks = new Set()
@@ -32,6 +34,8 @@ function getExistingBodyPadding () {
  * Prevents body scrolling. Keeps track of which elements requested a lock so
  * multiple levels of locking are possible
  * without premature unlocking.
+ *
+ * Useful for modal windows.
  */
 export function lockBodyScrolling (lockingEl:HTMLElement):void {
     locks.add(lockingEl)

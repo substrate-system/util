@@ -49,6 +49,27 @@ import { attributesToString } from '@substrate-system/util'
 
 ## API
 
+### toString
+
+Convert an object into a string suitable for HTML attributes. The object
+should be like `{ attributeName: value }`. `value` can be and array, string,
+or boolean. If it is a boolean, then this will add the attribute name only, eg
+
+```js
+import { attributes } from '@substrate-system/util/to-string.js'
+
+attributes({ disabled: true })
+// => 'disabled'
+```
+
+```js
+import { attributes } from '@substrate-system/util/to-string.js'
+
+const string = attributes({ hello: 'abc', ok: '123' })
+
+// => 'hello="abc" ok="123"'
+```
+
 ### lock & unlock scrolling
 
 Prevents body scrolling, useful for things like "dialog" windows.
@@ -60,7 +81,10 @@ Originally seen in [the shoelace library](https://github.com/shoelace-style/shoe
 #### example
 
 ```js
-import { lockBodyScrolling, unlockBodyScrolling } from '@substrate-system/util'
+import {
+    lockBodyScrolling,
+    unlockBodyScrolling
+} from '@substrate-system/util/scroll'
 
 // stop scroll
 lockBodyScrolling(document.body)

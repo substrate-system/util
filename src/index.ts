@@ -1,10 +1,12 @@
-export * from './queue'
-export * from './classes'
+export * from './queue.js'
+export * from './classes.js'
+export * from './to-string.js'
 
 /**
- * Get attributes from an HTMLElement, and return them as a string
+ * Get attributes from an HTMLElement, and return them as a string.
  * like `key=val`.
- * @param {Attr[]} attrs An array of the attributes
+ * @param {Attr[]} attrs An array of the attributes, where attributes are like
+ *                       `{ name: 'aaa', value: 'bbb' }`
  * @returns {string} The attributes as a string like `key=val`
  */
 export function attributesToString (attrs:Attr[]):string {
