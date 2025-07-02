@@ -17,6 +17,10 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
+    "./dom": {
+      "import": "./dist/dom.js",
+      "require": "./dist/dom.cjs"
+    },
     "./constants": {
       "import": "./dist/CONSTANTS.js",
       "require": "./dist/CONSTANTS.cjs"
