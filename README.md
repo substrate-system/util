@@ -95,6 +95,23 @@ locking are possible without premature unlocking.
 
 Originally seen in [the shoelace library](https://github.com/shoelace-style/shoelace/blob/fb59fda70ed737c92611051b49bc7e3a5fed5dc5/src/internal/scroll.ts#L58).
 
+#### CSS
+
+Depends on having this CSS:
+
+```css
+@supports (scrollbar-gutter:stable) {
+    .sl-scroll-lock body {
+        overflow: hidden !important;
+    }
+}
+```
+
+Import from here to add it:
+```js
+import '@substrate-system/util/css/scroll'
+```
+
 #### example
 
 ```js
