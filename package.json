@@ -18,7 +18,7 @@
       "require": "./dist/index.cjs"
     },
     "./css/*": "./dist/*.css",
-    "./css/min/*": "",
+    "./css/min/*": "./dist/*.min.css",
     "./dom": {
       "import": "./dist/dom.js",
       "require": "./dist/dom.cjs"
@@ -49,7 +49,7 @@
     "test:node": "esbuild ./test/node/index.ts --bundle | node | tap-spec",
     "test-tape-run": "cat test/index.html | tape-run --input=html --static=test | tap-spec",
     "build-css": "postcss src/*.css --use postcss-nesting --dir ./dist",
-    "build-css:min": "postcss src/*.css --use cssnano postcss-nesting --dir ./dist",
+    "build-css:min": "postcss src/*.css --use cssnano postcss-nesting --dir ./dist --ext=\".min.css\"",
     "build-cjs": "esbuild src/node/*.ts src/*.ts --format=cjs --keep-names --tsconfig=tsconfig.build.json --outdir=./dist --out-extension:.js=.cjs --sourcemap",
     "build-esm": "esbuild src/node/*.ts src/*.ts --format=esm --metafile=dist/meta.json --keep-names --tsconfig=tsconfig.build.json --outdir=./dist --sourcemap && tsc --emitDeclarationOnly --project tsconfig.build.json --outDir dist",
     "build-esm:min": "esbuild ./src/*.ts --format=esm --keep-names --bundle --tsconfig=tsconfig.build.json --minify --out-extension:.js=.min.js --outdir=./dist --sourcemap",
