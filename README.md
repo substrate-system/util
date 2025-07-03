@@ -101,7 +101,7 @@ Depends on having this CSS:
 
 ```css
 @supports (scrollbar-gutter:stable) {
-    .sl-scroll-lock body {
+    .scroll-lock body {
         overflow: hidden !important;
     }
 }

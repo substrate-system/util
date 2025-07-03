@@ -44,12 +44,12 @@ export function lockBodyScrolling (lockingEl:HTMLElement):void {
     // scrollbar's width to prevent content from
     // shifting. We only do this on the first lock because the scrollbar width
     // will measure zero after overflow is hidden.
-    if (!document.documentElement.classList.contains('sl-scroll-lock')) {
+    if (!document.documentElement.classList.contains('scroll-lock')) {
         /**
          * Scrollbar width + body padding calculation can go away once Safari
          * has scrollbar-gutter support.
          * */
-        // must be measured before the `sl-scroll-lock` class is applied
+        // must be measured before the `scroll-lock` class is applied
         const scrollbarWidth = getScrollbarWidth() + getExistingBodyPadding()
 
         let scrollbarGutterProperty = (getComputedStyle(document.documentElement)
@@ -72,12 +72,12 @@ export function lockBodyScrolling (lockingEl:HTMLElement):void {
         }
 
         document.documentElement.style.setProperty(
-            '--sl-scroll-lock-gutter',
+            '--scroll-lock-gutter',
             scrollbarGutterProperty
         )
-        document.documentElement.classList.add('sl-scroll-lock')
+        document.documentElement.classList.add('scroll-lock')
         document.documentElement.style.setProperty(
-            '--sl-scroll-lock-size',
+            '--scroll-lock-size',
             `${scrollbarWidth}px`
         )
     }
@@ -91,7 +91,7 @@ export function unlockBodyScrolling (lockingEl:HTMLElement):void {
     locks.delete(lockingEl)
 
     if (locks.size === 0) {
-        document.documentElement.classList.remove('sl-scroll-lock')
-        document.documentElement.style.removeProperty('--sl-scroll-lock-size')
+        document.documentElement.classList.remove('scroll-lock')
+        document.documentElement.style.removeProperty('--scroll-lock-size')
     }
 }
