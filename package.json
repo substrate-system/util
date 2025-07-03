@@ -83,7 +83,7 @@
     "tape-run": "^11.0.0",
     "typedoc": "^0.28.1",
     "typescript": "^5.8.3",
-    "vite": "^6.2.6"
+    "vite": "^7.0.0"
   },
   "author": "nichoth <nichoth@nichoth.com> (https://nichoth.com)",
   "license": "SEE LICENSE IN LICENSE",
