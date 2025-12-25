@@ -1,6 +1,15 @@
-import { createDebug } from '@substrate-system/debug'
-const debug = createDebug()
+/**
+ * Format a number as an English string.
+ *
+ * @param n The number
+ * @returns An English string, like "One Billion".
+ */
+export function numberToString (n:number|null):string {
+    if (n === null) return 'null'
+    const formatter = new Intl.NumberFormat('en-US', {
+        notation: 'compact',
+        compactDisplay: 'long'
+    })
 
-export function example ():void {
-    debug('hello')
+    return formatter.format(n)
 }
