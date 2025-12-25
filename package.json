@@ -1,6 +1,6 @@
 {
   "name": "@substrate-system/util",
-  "version": "0.1.36",
+  "version": "0.1.37",
   "description": "Miscellaneous utility functions",
   "type": "module",
   "exports": {
